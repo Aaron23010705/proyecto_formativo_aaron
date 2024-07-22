@@ -7,5 +7,5 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val txtPacientesCard = view.findViewById<TextView>(R.id.txtPacientesCard)
+    val CardPacientes = view.findViewById<TextView>(R.id.txtPacientesCard)
 }
