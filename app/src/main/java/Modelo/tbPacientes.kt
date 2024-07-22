@@ -2,11 +2,11 @@ package Modelo
 
 data class tbPacientes(
     val uuid: String,
-    val nombres: String,
-    val apellidos : String,
-    val edad: Int,
-    val enfermedad: String,
-    val habitacion : Int,
-    val cama: Int,
-    val fecha : String
+    var nombres: String,
+    var apellidos : String,
+    var edad: Int,
+    var enfermedad: String,
+    var habitacion : Int,
+    var cama: Int,
+    var fecha : String
 )

@@ -105,6 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginBottom="24dp"
+        android:editable="true"
         android:ems="10"
         android:hint="Fecha de ingreso"
         android:inputType="text"
