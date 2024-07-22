@@ -10,13 +10,17 @@
             android:title="Inicio" />
         <item
             android:id="@+id/verPacientes"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/baseline_account_circle_24"
             android:title="Ver Pacientes" />
         <item
             android:id="@+id/agregarPaciente"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/baseline_add_24"
             android:title="Agregar pacientes" />
 
+        <item
+            android:id="@+id/agregarMedicamento"
+            android:icon="@drawable/baseline_add_24"
+            android:title="Agregar medicamentos" />
 
     </group>
 </menu>

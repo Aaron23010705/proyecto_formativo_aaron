@@ -1,6 +1,7 @@
 package Aaron.Garcia.proyecto_formativo_aaron_2b
 
 import Modelo.ClaseConexion
+import RecyclerViewHelper.Adaptador
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
@@ -14,6 +15,7 @@ import android.widget.Toast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.Calendar
 import java.util.UUID
 
@@ -159,6 +161,7 @@ class agregarPaciente : Fragment() {
                     agregarPaciente.executeUpdate()
 
                 }
+
             }
         }
         return root
