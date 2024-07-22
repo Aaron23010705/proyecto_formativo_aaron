@@ -19,4 +19,9 @@
         android:name="Aaron.Garcia.proyecto_formativo_aaron_2b.agregarPaciente"
         android:label="fragment_agregar_paciente"
         tools:layout="@layout/fragment_agregar_paciente" />
+    <fragment
+        android:id="@+id/agregarMedicamento"
+        android:name="Aaron.Garcia.proyecto_formativo_aaron_2b.agregarMedicamento"
+        android:label="fragment_agregar_medicamento"
+        tools:layout="@layout/fragment_agregar_medicamento" />
 </navigation>

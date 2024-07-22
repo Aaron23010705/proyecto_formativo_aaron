@@ -38,6 +38,35 @@ class Login : AppCompatActivity() {
         }
 
         btnIniciar.setOnClickListener {
+
+            val correoLogin = txtCorreoLogin.text.toString()
+            val contraLogin = txtContraLogin.text.toString()
+
+
+
+            var hayerrores = false;
+
+            if (correoLogin.isEmpty()) {
+                txtCorreoLogin.error = "Porfavor ingrese un correo"
+                hayerrores = true
+            } else {
+                txtCorreoLogin.error = null;
+            }
+
+            if (contraLogin.isEmpty()) {
+                txtContraLogin.error = "Porfavor ingrese una contraseña"
+                hayerrores = true
+            } else {
+                txtContraLogin.error = null;
+            }
+
+            if (hayerrores) {
+
+            }
+            else {
+
+
+
             val pasar = Intent(this, MainActivity::class.java)
 
             CoroutineScope(Dispatchers.IO).launch {
@@ -54,11 +83,15 @@ class Login : AppCompatActivity() {
                     if (usuarioVerdadero.next()) {
                         startActivity(pasar)
                     } else {
-                  Toast.makeText(this@Login, "Contraseña o correo incorrectos", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this@Login,
+                            "Contraseña o correo incorrectos",
+                            Toast.LENGTH_SHORT
+                        ).show()
 
                     }
 
-
+                }
                 }
             }
         }

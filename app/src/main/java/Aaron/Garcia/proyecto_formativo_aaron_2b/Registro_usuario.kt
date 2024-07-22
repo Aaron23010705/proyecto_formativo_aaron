@@ -36,21 +36,55 @@ class Registro_usuario : AppCompatActivity() {
 
         btnRegistrar.setOnClickListener {
 
-            println("Estamos dentro del setonclicklistener")
-            val pasar_login = Intent(this, Login::class.java)
-            CoroutineScope(Dispatchers.IO).launch {
-                val objConexion = ClaseConexion().cadenaConexion()
-println("Estamos dentro de una corrutina y funciono el objeto conexion")
-                val nuevousuario = objConexion?.prepareStatement("insert into tbUsuarios (uuid_usuario, nombre_usario, correo_usuario, contra_usuario) values (?,?,?,?)")!!
-                nuevousuario.setString(1, UUID.randomUUID().toString())
-                nuevousuario.setString(2, txtNombre.text.toString())
-                nuevousuario.setString(3, txtCorreo.text.toString())
-                nuevousuario.setString(4, txtContra.text.toString())
-                println("Se creo el usuarió")
-                nuevousuario.executeUpdate()
+            val nombreRegistro = txtNombre.text.toString()
+            val correoRegistro = txtCorreo.text.toString()
+            val contraRegistro = txtContra.text.toString()
 
-                startActivity(pasar_login)
 
+            var hayerrores = false;
+
+            if (nombreRegistro.isEmpty()) {
+                txtNombre.error = "Porfavor ingrese un nombre"
+                hayerrores = true
+            } else {
+                txtNombre.error = null;
+            }
+
+            if (correoRegistro.isEmpty()) {
+                txtCorreo.error = "Porfavor ingrese un correo"
+                hayerrores = true
+            } else {
+                txtCorreo.error = null;
+            }
+            if (contraRegistro.isEmpty()) {
+                txtContra.error = "Porfavor ingrese una contraseña"
+                hayerrores = true
+            } else {
+                txtContra.error = null;
+            }
+            if (hayerrores) {
+
+            }
+            else {
+
+
+                println("Estamos dentro del setonclicklistener")
+                val pasar_login = Intent(this, Login::class.java)
+                CoroutineScope(Dispatchers.IO).launch {
+                    val objConexion = ClaseConexion().cadenaConexion()
+                    println("Estamos dentro de una corrutina y funciono el objeto conexion")
+                    val nuevousuario =
+                        objConexion?.prepareStatement("insert into tbUsuarios (uuid_usuario, nombre_usario, correo_usuario, contra_usuario) values (?,?,?,?)")!!
+                    nuevousuario.setString(1, UUID.randomUUID().toString())
+                    nuevousuario.setString(2, txtNombre.text.toString())
+                    nuevousuario.setString(3, txtCorreo.text.toString())
+                    nuevousuario.setString(4, txtContra.text.toString())
+                    println("Se creo el usuarió")
+                    nuevousuario.executeUpdate()
+
+                    startActivity(pasar_login)
+
+                }
             }
         }
 
