@@ -1,6 +1,7 @@
 package RecyclerViewHelper
 
 import Aaron.Garcia.proyecto_formativo_aaron_2b.R
+import Aaron.Garcia.proyecto_formativo_aaron_2b.agregarPaciente
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -36,7 +37,7 @@ class Adaptador(private var Datos: List<tbPacientes>) : RecyclerView.Adapter<Vie
 
             //Cambiar de pantalla a la pantalla de detalle
 
-            val pantallaDetalle = Intent(context, detalle_mascota::class.java)
+            val pantallaDetalle = Intent(context, agregarPaciente::class.java)
             //Enviar a la otra pantalla todos mis valores
             pantallaDetalle.putExtra("UUID_pacientes", paciente.uuid)
             pantallaDetalle.putExtra("Nombres_paciente",paciente.nombres)
