@@ -36,9 +36,12 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        if (intent.getBooleanExtra("ir_a_ver_pacientes", false))
+            navController.navigate(R.id.verPacientes)
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.inicio, R.id.agregarPaciente, R.id.verPacientes
+                R.id.inicio, R.id.agregarPaciente, R.id.verPacientes, R.id.agregarMedicamento
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

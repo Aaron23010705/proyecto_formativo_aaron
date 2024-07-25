@@ -16,25 +16,23 @@
         android:fontFamily="@font/farro"
         android:text="¡Bienvenida! ¿Lista para trabajar?"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintVertical_bias="0.114" />
 
     <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="196dp"
-        android:layout_height="202dp"
-        android:src="@drawable/mejorlogo"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="249dp" />
+        android:id="@+id/imageView38"
+        android:layout_width="453dp"
+        android:layout_height="286dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginBottom="293dp"
+        android:src="@drawable/bloom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="318dp"
-        android:layout_height="319dp"
-        android:src="@drawable/pacientes"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="407dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

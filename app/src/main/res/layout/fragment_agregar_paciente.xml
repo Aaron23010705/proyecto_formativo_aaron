@@ -210,69 +210,57 @@
         android:id="@+id/imageView16"
         android:layout_width="27dp"
         android:layout_height="29dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="102dp"
-        android:layout_marginEnd="331dp"
-        android:layout_marginBottom="600dp"
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtNombres"
+        app:layout_constraintHorizontal_bias="0.716"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.145" />
 
     <ImageView
         android:id="@+id/imageView17"
         android:layout_width="27dp"
         android:layout_height="29dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="159dp"
-        android:layout_marginEnd="331dp"
-        android:layout_marginBottom="543dp"
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.226" />
 
     <ImageView
         android:id="@+id/imageView18"
         android:layout_width="27dp"
         android:layout_height="29dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="221dp"
-        android:layout_marginEnd="331dp"
-        android:layout_marginBottom="482dp"
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.314" />
 
     <ImageView
         android:id="@+id/imageView19"
         android:layout_width="27dp"
         android:layout_height="29dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="288dp"
-        android:layout_marginEnd="331dp"
-        android:layout_marginBottom="414dp"
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtEnfermedad"
+        app:layout_constraintHorizontal_bias="0.716"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.397" />
 
     <ImageView
         android:id="@+id/imageView20"
         android:layout_width="27dp"
         android:layout_height="29dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="351dp"
-        android:layout_marginEnd="331dp"
-        android:layout_marginBottom="351dp"
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -280,57 +268,50 @@
         android:id="@+id/imageView21"
         android:layout_width="27dp"
         android:layout_height="29dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="413dp"
-        android:layout_marginEnd="331dp"
-        android:layout_marginBottom="289dp"
+        android:layout_marginStart="24dp"
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtNCama"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.588" />
 
     <ImageView
         android:id="@+id/imageView22"
         android:layout_width="27dp"
         android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="479dp"
-        android:layout_marginEnd="368dp"
-        android:layout_marginBottom="223dp"
+        android:layout_marginStart="4dp"
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spMedicamentos"
+        app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73" />
 
     <ImageView
         android:id="@+id/imageView23"
         android:layout_width="27dp"
         android:layout_height="29dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="535dp"
-        android:layout_marginEnd="331dp"
-        android:layout_marginBottom="167dp"
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtFechaIngreso"
+        app:layout_constraintHorizontal_bias="0.729"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.772" />
 
     <ImageView
         android:id="@+id/imageView24"
         android:layout_width="27dp"
         android:layout_height="29dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="595dp"
-        android:layout_marginEnd="331dp"
-        android:layout_marginBottom="107dp"
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtHoraMed"
+        app:layout_constraintHorizontal_bias="0.729"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.857" />
 
     <ImageView
         android:id="@+id/imageView25"

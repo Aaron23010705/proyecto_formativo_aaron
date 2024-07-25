@@ -122,8 +122,9 @@ class detalle_paciente : AppCompatActivity() {
 
 
         btnVolver.setOnClickListener {
-            val volverVer = Intent(this, verPacientes::class.java)
-            startActivity(volverVer)
+val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("ir_a_ver_pacientes", true)
+            startActivity(intent)
         }
 
 
