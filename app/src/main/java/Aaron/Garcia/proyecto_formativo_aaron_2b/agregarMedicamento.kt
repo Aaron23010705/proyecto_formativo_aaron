@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.UUID
 
 // TODO: Rename parameter arguments, choose names that match
@@ -70,9 +72,11 @@ class agregarMedicamento : Fragment() {
                         objConexion?.prepareStatement("Insert into tbMedicamentos (UUID_Medicamento, nombre_medicamento) values (?,?)")!!
                     nuevoMed.setString(1, UUID.randomUUID().toString())
                     nuevoMed.setString(2, txtNombreMed.text.toString())
-
-                    println("Se creo el medicamento ")
                     nuevoMed.executeUpdate()
+                    withContext(Dispatchers.Main){
+                        Toast.makeText(requireContext(), "Medicamento agregado", Toast.LENGTH_SHORT).show()
+
+                    }
 
 
                 }

@@ -37,6 +37,10 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Proyecto_formativo_Aaron_2B.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

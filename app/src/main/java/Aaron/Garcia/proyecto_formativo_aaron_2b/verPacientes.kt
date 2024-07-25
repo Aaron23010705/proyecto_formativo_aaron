@@ -16,6 +16,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.sql.ResultSet
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,7 +58,7 @@ class verPacientes : Fragment() {
             val objConexion = ClaseConexion().cadenaConexion()
 
             val statement = objConexion?.createStatement()
-            val resulset = statement?.executeQuery("Select * from tbPacientes")
+            val resulset = statement?.executeQuery("SELECT p.uuid_pacientes, p.nombres_paciente, p.apellidos_paciente, p.edad, p.enfermedad, p.numero_habitacion, p.numero_cama, p.fecha_ingreso, p.hora_aplicacion, m.nombre_medicamento FROM tbPacientes p INNER JOIN tbMedicamentos m ON p.medicamento = m.uuid_medicamento")
 
             val listaPacientes = mutableListOf<tbPacientes>()
 
@@ -70,8 +71,12 @@ class verPacientes : Fragment() {
                 val habitacion = resulset.getInt("numero_habitacion")
                 val cama = resulset.getInt("numero_cama")
                 val fecha = resulset.getString("fecha_ingreso")
+                val hora_med = resulset.getString("hora_aplicacion")
+                val med = resulset.getString("nombre_medicamento")
 
-                val valoresJuntos = tbPacientes(uuid,nombres,apellidos,edad,enfermedad,habitacion,cama,fecha)
+
+
+                val valoresJuntos = tbPacientes(uuid,nombres,apellidos,edad,enfermedad,habitacion,cama,fecha, hora_med, med)
 
 listaPacientes.add(valoresJuntos)
             }

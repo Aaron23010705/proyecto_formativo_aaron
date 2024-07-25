@@ -1,11 +1,17 @@
 package Aaron.Garcia.proyecto_formativo_aaron_2b
 
 import Modelo.ClaseConexion
+import RecyclerViewHelper.Adaptador
 import android.app.AlertDialog
+import android.app.DatePickerDialog
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -13,9 +19,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.findNavController
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.util.Calendar
 
 class detalle_paciente : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +43,14 @@ class detalle_paciente : AppCompatActivity() {
         val HabitacionRecibida = intent.getIntExtra("numero_habitacion", 0)
         val CamaRecibida = intent.getIntExtra("numero_habitacion", 0)
         val fecha_ingreso = intent.getStringExtra("fecha_ingreso")
+        val hora_recibida  = intent.getStringExtra("hora_aplicacion")
+        var uuid_med_recibida =  intent.getStringExtra("medicamento")
+
+
+
+
+
+
 
         //Mando a llamar a todos los elelemntos de la pantalla
         val txtNombresDetalle = findViewById<TextView>(R.id.txtNombrePaciente)
@@ -44,10 +60,17 @@ class detalle_paciente : AppCompatActivity() {
         val txtHabitacionDetalle = findViewById<TextView>(R.id.txtHabitacionPaciente)
         val txtCamaDetalle = findViewById<TextView>(R.id.txtCamaPaciente)
         val txtFecha_ingreso = findViewById<TextView>(R.id.txtFecha_paciente)
+        val txtHoraMed = findViewById<TextView>(R.id.txtHoraMedDetalle)
+        val txtMed = findViewById<TextView>(R.id.txtMedDetalle)
+        val btnVolver = findViewById<ImageView>(R.id.btnVolverVer)
         val btnEditar = findViewById<Button>(R.id.btnEditar)
 
-        //Asignarle los datos recibidos a mis textos
-//Segundo = primero
+
+
+
+         //Asignarle los datos recibidos a mis textos
+
+
 
         txtNombresDetalle.text = nombresRecibidos.toString()
         txtApellidosDetalle.text = apellidosRecibidos.toString()
@@ -56,17 +79,13 @@ class detalle_paciente : AppCompatActivity() {
         txtHabitacionDetalle.text = HabitacionRecibida.toString()
         txtCamaDetalle.text = CamaRecibida.toString()
         txtFecha_ingreso.text = fecha_ingreso.toString()
+        txtHoraMed.text = hora_recibida.toString()
+        txtMed.text = uuid_med_recibida.toString()
 
 
-        fun uodate(
-            nombresnuevos: String,
-            apellidosNuevos: String,
-            EdadNueva: String,
-            EnfermedadNueva: String,
-            HabitacionNueva: String,
-            CamaNueva: String,
-            fechaNueva: String, ) {
-            GlobalScope.launch(Dispatchers.IO) {
+
+
+        fun uodate(nombresnuevos: String, apellidosNuevos: String, EdadNueva: String, EnfermedadNueva: String, HabitacionNueva: String, CamaNueva: String, fechaNueva: String, hora_nueva:String ) { GlobalScope.launch(Dispatchers.IO) {
 
                 ///1 - creo un objeto de la clase conexion
                 val objConexion = ClaseConexion().cadenaConexion()
@@ -74,8 +93,7 @@ class detalle_paciente : AppCompatActivity() {
                 //2 - Creo una variable que tenga un prepareStatement
                 val actualizarPaciente =
                     objConexion?.prepareStatement(
-                        "UPDATE tbveterinaria set nombre_veterinaria = ?, ubicacion_veterinaria = ?, nit = ?, contacto_veterinaria = ?, correo_veterinaria = ?, descripcion_servicio = ? where correo_veterinaria = ?"
-                    )!!
+                        "Update tbPacientes set nombres_paciente = ?, apellidos_paciente = ?, edad = ?, enfermedad = ?, numero_habitacion = ?, numero_cama = ?, fecha_ingreso = ?, hora_aplicacion = ?  where nombres_paciente = ?")!!
                 actualizarPaciente.setString(1, nombresnuevos)
                 actualizarPaciente.setString(2, apellidosNuevos)
                 actualizarPaciente.setString(3, EdadNueva)
@@ -83,6 +101,8 @@ class detalle_paciente : AppCompatActivity() {
                 actualizarPaciente.setString(5, HabitacionNueva)
                 actualizarPaciente.setString(6, CamaNueva)
                 actualizarPaciente.setString(7, fechaNueva)
+            actualizarPaciente.setString(8, hora_nueva)
+            actualizarPaciente.setString(9, nombresRecibidos)
                 actualizarPaciente.executeUpdate()
             }
         }
@@ -97,6 +117,13 @@ class detalle_paciente : AppCompatActivity() {
                 }
             }
             return true
+        }
+
+
+
+        btnVolver.setOnClickListener {
+            val volverVer = Intent(this, verPacientes::class.java)
+            startActivity(volverVer)
         }
 
 
@@ -120,12 +147,19 @@ class detalle_paciente : AppCompatActivity() {
 
             val habitacion = EditText(this)
             habitacion.setHint("N° Habitación")
+            habitacion.inputType = InputType.TYPE_CLASS_NUMBER
 
             val cama = EditText(this)
             cama.setHint("N° Cama")
+            cama.inputType = InputType.TYPE_CLASS_NUMBER
 
             val fecha = EditText(this)
             fecha.setHint("Fecha_ingreso")
+
+            val hora = EditText(this)
+            hora.setHint("hora_aplicacion")
+
+
 
             val layout = LinearLayout(this).apply {
                 orientation = LinearLayout.VERTICAL
@@ -136,31 +170,14 @@ class detalle_paciente : AppCompatActivity() {
                 addView(habitacion)
                 addView(cama)
                 addView(fecha)
+                addView(hora)
 
             }
-
             builder.setView(layout)
 
             builder.setPositiveButton("Si") { dialog, which ->
-                if (isValid(
-                        nombrenuevo,
-                        apellidonuevo,
-                        edad,
-                        enfermedad,
-                        habitacion,
-                        cama,
-                        fecha
-                    )
-                ) {
-                    uodate(
-                        nombrenuevo.text.toString(),
-                        apellidonuevo.text.toString(),
-                        edad.text.toString(),
-                        enfermedad.text.toString(),
-                        habitacion.text.toString(),
-                        cama.text.toString(),
-                        fecha.text.toString()
-                    )
+                if (isValid(nombrenuevo, apellidonuevo, edad, enfermedad, habitacion, cama, fecha,hora)
+                ) { uodate(nombrenuevo.text.toString(), apellidonuevo.text.toString(), edad.text.toString(), enfermedad.text.toString(), habitacion.text.toString(), cama.text.toString(), fecha.text.toString(), hora.text.toString())
                     Toast.makeText(this, "Datos actualizados", Toast.LENGTH_SHORT).show()
                     dialog.dismiss()
                     txtNombresDetalle.text = nombrenuevo.text.toString()
@@ -170,13 +187,16 @@ class detalle_paciente : AppCompatActivity() {
                     txtHabitacionDetalle.text = habitacion.text.toString()
                     txtCamaDetalle.text = cama.text.toString()
                     txtFecha_ingreso.text = fecha.text.toString()
+                    txtHoraMed.text = hora.text.toString()
 
                 }
                 builder.setNegativeButton("no") { dialog, which ->
                     dialog.dismiss()
                 }
-                builder.show()
+
             }
+
+builder.show()
 
 
         }

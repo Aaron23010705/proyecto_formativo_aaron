@@ -1,6 +1,7 @@
 package Aaron.Garcia.proyecto_formativo_aaron_2b
 
 import Modelo.ClaseConexion
+import Modelo.dataClassMedicamentos
 import RecyclerViewHelper.Adaptador
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -9,8 +10,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -56,112 +59,163 @@ class agregarPaciente : Fragment() {
         val txtEnfermedad =  root.findViewById<EditText>(R.id.txtEnfermedad)
         val txtHabitacion =  root.findViewById<EditText>(R.id.txtNhabitacion)
         val txtCama =  root.findViewById<EditText>(R.id.txtNCama)
+        val spMedicamentos = root.findViewById<Spinner>(R.id.spMedicamentos)
         val txtFechaIngreso =  root.findViewById<EditText>(R.id.txtFechaIngreso)
+        val txtHoraMed = root.findViewById<EditText>(R.id.txtHoraMed)
         val btnAgregar =  root.findViewById<Button>(R.id.btnAgregarPaciente)
 
 
-        txtFechaIngreso.setOnClickListener {
-            val calendario = Calendar.getInstance()
-            val anio = calendario.get(Calendar.YEAR)
-            val mes = calendario.get(Calendar.MONTH)
-            val dia = calendario.get(Calendar.DAY_OF_MONTH)
-            val datePickerDialog = DatePickerDialog(
-                requireContext(),
-                { view, anioSeleccionado, mesSeleccionado, diaSeleccionado ->
-                    val fechaSeleccionada =
-                        "$diaSeleccionado/${mesSeleccionado + 1}/$anioSeleccionado"
-                    txtFechaIngreso.setText(fechaSeleccionada)
-                },
-                anio, mes, dia
-            )
-            datePickerDialog.show()
+        fun obtenerMedicamentos(): List<dataClassMedicamentos> {
+
+            val objConexion = ClaseConexion().cadenaConexion()
+
+            //Creo un statement que me ejecute el select
+            val statement = objConexion?.createStatement()
+
+            val resultSet = statement?.executeQuery("select * from tbMedicamentos")!!
+
+            val listaMedicamentos = mutableListOf<dataClassMedicamentos>()
+
+            while (resultSet.next()) {
+                val uuid = resultSet.getString("UUID_medicamento")
+                val nombre = resultSet.getString("nombre_medicamento")
+
+                val unMedicamentoCompleto =
+                    dataClassMedicamentos(uuid, nombre)
+                listaMedicamentos.add(unMedicamentoCompleto)
+
+
+            }
+            return listaMedicamentos
         }
 
-        btnAgregar.setOnClickListener {
-            val nombres = txtNombres.text.toString()
-            val apellidos = txtApellidos.text.toString()
-            val edad = txtEdad.text.toString()
-            val enfermedad = txtEnfermedad.text.toString()
-            val habitacion = txtHabitacion.text.toString()
-            val cama = txtCama.text.toString()
-            val fecha = txtFechaIngreso.text.toString()
+        CoroutineScope(Dispatchers.IO).launch {
 
+            //1- Obtener el listado de datos que quiero mostrar
+            val listadoMed = obtenerMedicamentos()
+            val nombreMedicamento = listadoMed.map { it.nombre_med }
 
-            var hayerrores = false;
-
-            if (nombres.isEmpty()) {
-                txtNombres.error = "Los nombres son obligatorios"
-                hayerrores = true
-            } else {
-                txtNombres.error = null;
+            withContext(Dispatchers.Main) {
+                //2 Creo y  configuto el adaptador
+                val miAdaptadorr = ArrayAdapter(
+                    requireContext(),
+                    android.R.layout.simple_spinner_dropdown_item,
+                    nombreMedicamento
+                )
+                spMedicamentos.adapter = miAdaptadorr
             }
 
-            if (apellidos.isEmpty()) {
-                txtApellidos.error = "Los apellidos son obligatorios"
-                hayerrores = true
-            } else {
-                txtApellidos.error = null;
+            txtFechaIngreso.setOnClickListener {
+                val calendario = Calendar.getInstance()
+                val anio = calendario.get(Calendar.YEAR)
+                val mes = calendario.get(Calendar.MONTH)
+                val dia = calendario.get(Calendar.DAY_OF_MONTH)
+                val datePickerDialog = DatePickerDialog(
+                    requireContext(),
+                    { view, anioSeleccionado, mesSeleccionado, diaSeleccionado ->
+                        val fechaSeleccionada =
+                            "$diaSeleccionado/${mesSeleccionado + 1}/$anioSeleccionado"
+                        txtFechaIngreso.setText(fechaSeleccionada)
+                    },
+                    anio, mes, dia
+                )
+                datePickerDialog.show()
             }
 
-
-            if (edad.isEmpty()) {
-                txtEdad.error = "La edad es obligatoria"
-                hayerrores = true
-            } else {
-                txtEdad.error = null;
-            }
-
-            if (enfermedad.isEmpty()) {
-                txtEnfermedad.error = "La enfermedad es obligatoria"
-                hayerrores = true
-            } else {
-                txtEnfermedad.error = null;
-            }
+            btnAgregar.setOnClickListener {
+                val nombres = txtNombres.text.toString()
+                val apellidos = txtApellidos.text.toString()
+                val edad = txtEdad.text.toString()
+                val enfermedad = txtEnfermedad.text.toString()
+                val habitacion = txtHabitacion.text.toString()
+                val cama = txtCama.text.toString()
+                val fecha = txtFechaIngreso.text.toString()
 
 
-            if (habitacion.isEmpty()) {
-                txtHabitacion.error = "El número de habitación es obligatorio"
-                hayerrores = true
-            } else {
-                txtHabitacion.error = null;
-            }
+                var hayerrores = false;
 
-            if (cama.isEmpty()) {
-                txtCama.error = "el número de cama es obligatorio"
-                hayerrores = true
-            } else {
-                txtCama.error = null;
-            }
-
-            if (fecha.isEmpty()) {
-                txtFechaIngreso.error = "La fecha de ingreso es obligatoria"
-                hayerrores = true
-            } else {
-                txtFechaIngreso.error = null;
-            }
-
-            if (hayerrores) {
-                //
-            } else {
-
-                CoroutineScope(Dispatchers.IO).launch {
-
-                    val objConexion = ClaseConexion().cadenaConexion()
-                    val agregarPaciente =
-                        objConexion?.prepareStatement("Insert into tbPacientes (uuid_pacientes, nombres_paciente, apellidos_paciente,edad, enfermedad, numero_habitacion, numero_cama, fecha_ingreso) values (?,?,?,?,?,?,?,?)")!!
-                    agregarPaciente.setString(1, UUID.randomUUID().toString())
-                    agregarPaciente.setString(2, txtNombres.text.toString())
-                    agregarPaciente.setString(3, txtApellidos.text.toString())
-                    agregarPaciente.setString(4, txtEdad.text.toString())
-                    agregarPaciente.setString(5, txtEnfermedad.text.toString())
-                    agregarPaciente.setString(6, txtHabitacion.text.toString())
-                     agregarPaciente.setString(7, txtCama.text.toString())
-                    agregarPaciente.setString(8, txtFechaIngreso.text.toString())
-
-                    agregarPaciente.executeUpdate()
-
+                if (nombres.isEmpty()) {
+                    txtNombres.error = "Los nombres son obligatorios"
+                    hayerrores = true
+                } else {
+                    txtNombres.error = null;
                 }
 
+                if (apellidos.isEmpty()) {
+                    txtApellidos.error = "Los apellidos son obligatorios"
+                    hayerrores = true
+                } else {
+                    txtApellidos.error = null;
+                }
+
+
+                if (edad.isEmpty()) {
+                    txtEdad.error = "La edad es obligatoria"
+                    hayerrores = true
+                } else {
+                    txtEdad.error = null;
+                }
+
+                if (enfermedad.isEmpty()) {
+                    txtEnfermedad.error = "La enfermedad es obligatoria"
+                    hayerrores = true
+                } else {
+                    txtEnfermedad.error = null;
+                }
+
+
+                if (habitacion.isEmpty()) {
+                    txtHabitacion.error = "El número de habitación es obligatorio"
+                    hayerrores = true
+                } else {
+                    txtHabitacion.error = null;
+                }
+
+                if (cama.isEmpty()) {
+                    txtCama.error = "el número de cama es obligatorio"
+                    hayerrores = true
+                } else {
+                    txtCama.error = null;
+                }
+
+                if (fecha.isEmpty()) {
+                    txtFechaIngreso.error = "La fecha de ingreso es obligatoria"
+                    hayerrores = true
+                } else {
+                    txtFechaIngreso.error = null;
+                }
+
+                if (hayerrores) {
+                    //
+                } else {
+
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val medicamentos = obtenerMedicamentos()
+                        val uuidmed = medicamentos[spMedicamentos.selectedItemPosition].UUID
+                        val objConexion = ClaseConexion().cadenaConexion()
+                        val agregarPaciente =
+                            objConexion?.prepareStatement("Insert into tbPacientes (uuid_pacientes, nombres_paciente, apellidos_paciente,edad, enfermedad, numero_habitacion, numero_cama, fecha_ingreso, hora_aplicacion, medicamento) values (?,?,?,?,?,?,?,?,?,?)")!!
+                        agregarPaciente.setString(1, UUID.randomUUID().toString())
+                        agregarPaciente.setString(2, txtNombres.text.toString())
+                        agregarPaciente.setString(3, txtApellidos.text.toString())
+                        agregarPaciente.setString(4, txtEdad.text.toString())
+                        agregarPaciente.setString(5, txtEnfermedad.text.toString())
+                        agregarPaciente.setString(6, txtHabitacion.text.toString())
+                        agregarPaciente.setString(7, txtCama.text.toString())
+                        agregarPaciente.setString(8, txtFechaIngreso.text.toString())
+                        agregarPaciente.setString(9, txtHoraMed.text.toString())
+                        agregarPaciente.setString(10, uuidmed)
+                        agregarPaciente.executeUpdate()
+                        withContext(Dispatchers.Main){
+                            Toast.makeText(requireContext(), "Paciente agregado", Toast.LENGTH_SHORT).show()
+
+                        }
+
+                    }
+
+
+
+                }
             }
         }
         return root

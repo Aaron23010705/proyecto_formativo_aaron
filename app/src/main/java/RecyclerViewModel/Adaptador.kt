@@ -104,8 +104,8 @@ class Adaptador(private var Datos: List<tbPacientes>) : RecyclerView.Adapter<Vie
             pantallaDetalle.putExtra("numero_habitacion", paciente.habitacion)
             pantallaDetalle.putExtra("numero_cama", paciente.cama)
             pantallaDetalle.putExtra("fecha_ingreso", paciente.fecha)
-
-
+            pantallaDetalle.putExtra("hora_aplicacion", paciente.hora_med)
+            pantallaDetalle.putExtra("medicamento", paciente.med)
             context.startActivity(pantallaDetalle)
 
         }

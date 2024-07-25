@@ -8,5 +8,7 @@ data class tbPacientes(
     var enfermedad: String,
     var habitacion : Int,
     var cama: Int,
-    var fecha : String
+    var fecha : String,
+    var hora_med :String,
+    var med :String
 )

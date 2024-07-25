@@ -5,48 +5,90 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/color_proyecto"
     tools:context=".detalle_paciente">
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="360"
+        android:rotationX="-144"
+        android:rotationY="141"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/cosita" />
 
     <Button
         android:id="@+id/btnEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="65dp"
+        android:layout_marginTop="683dp"
+        android:backgroundTint="#E15283"
         android:text="Editar datos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:rotationY="-72"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.474"
+        app:srcCompat="@drawable/cosita" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:fontFamily="@font/farro"
         android:text="Ve la información del paciente"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtNombrePaciente"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtCamaPaciente"
-        android:layout_width="134dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="146dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="32dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHabitacionPaciente" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624" />
 
     <TextView
         android:id="@+id/txtApellidosPaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="189dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="497dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,53 +96,266 @@
         android:id="@+id/txtFecha_paciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="491dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="195dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCamaPaciente" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtHabitacionPaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="373dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="313dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="@+id/txtEdadPaciente"
-        app:layout_constraintTop_toBottomOf="@+id/txtEdadPaciente" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtEdadPaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="253dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="433dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="@+id/txtApellidosPaciente"
-        app:layout_constraintTop_toBottomOf="@+id/txtApellidosPaciente" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtNombrePaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="558dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtApellidosPaciente"
-        app:layout_constraintEnd_toEndOf="@+id/txtApellidosPaciente" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtEnfermedadPaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="2dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="314dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="372dp"
         android:text="TextView"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtEdadPaciente"
-        app:layout_constraintTop_toBottomOf="@+id/txtEdadPaciente" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtHoraMedDetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="556dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="130dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMedDetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="629dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="57dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnVolverVer"
+        android:layout_width="33dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginBottom="571dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="139dp"
+        android:layout_marginEnd="287dp"
+        android:layout_marginBottom="563dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="506dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="442dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <ImageView
+        android:id="@+id/imageView28"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="321dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="381dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="381dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="321dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <ImageView
+        android:id="@+id/imageView30"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="435dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="267dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <ImageView
+        android:id="@+id/imageView31"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="202dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="563dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="139dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="629dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="73dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="136dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="273dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="542dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ver" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

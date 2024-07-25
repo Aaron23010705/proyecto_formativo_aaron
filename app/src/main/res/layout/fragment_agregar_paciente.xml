@@ -5,111 +5,345 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/color_proyecto"
     tools:context=".agregarPaciente">
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:rotationY="-72"
+        android:src="@drawable/cosita"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="310dp"
+        android:layout_height="261dp"
+        android:layout_marginTop="508dp"
+        android:layout_marginEnd="112dp"
+        android:rotation="360"
+        android:rotationX="-144"
+        android:rotationY="144"
+        android:src="@drawable/cosita"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtTituloAgregar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="649dp"
+        android:fontFamily="@font/farro"
         android:text="Agregar pacientes"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtNombres"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtNombres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginBottom="591dp"
         android:ems="10"
         android:hint="Nombres"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtApellidos"
-        app:layout_constraintStart_toStartOf="@+id/txtApellidos" />
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtApellidos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="536dp"
         android:ems="10"
         android:hint="Apellidos"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtEdad"
-        app:layout_constraintEnd_toEndOf="@+id/txtEdad" />
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtEnfermedad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="279dp"
+        android:layout_marginBottom="407dp"
         android:ems="10"
         android:hint="Enfermedad"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtNhabitacion"
-        app:layout_constraintEnd_toEndOf="@+id/txtNhabitacion" />
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnAgregarPaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="53dp"
+        android:layout_marginTop="667dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#E15484"
         android:text="Agregar Paciente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtEdad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginBottom="474dp"
         android:ems="10"
         android:hint="Edad"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/txtEnfermedad"
-        app:layout_constraintStart_toStartOf="@+id/txtEnfermedad" />
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtNhabitacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginTop="348dp"
+        android:layout_marginBottom="338dp"
         android:ems="10"
         android:hint="N° Habitación"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/txtNCama"
-        app:layout_constraintStart_toStartOf="@+id/txtNCama" />
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtNCama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="412dp"
+        android:layout_marginBottom="274dp"
         android:ems="10"
         android:hint="N° Cama"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/txtFechaIngreso"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtFechaIngreso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="24dp"
-        android:editable="true"
+        android:layout_marginTop="526dp"
+        android:layout_marginBottom="160dp"
+        android:editable="false"
         android:ems="10"
+        android:focusable="false"
         android:hint="Fecha de ingreso"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/btnAgregarPaciente"
-        app:layout_constraintStart_toStartOf="@+id/txtNCama" />
+        android:textColor="#F8F8F8"
+        android:textColorHint="#EFEFEF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spMedicamentos"
+        android:layout_width="305dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="469dp"
+        android:layout_marginBottom="216dp"
+        android:background="@drawable/rectangle"
+        android:backgroundTint="#D7F4F8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/txtHoraMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="586dp"
+        android:layout_marginBottom="100dp"
+        android:ems="10"
+        android:hint="Hora de aplicación"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginBottom="600dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="159dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginBottom="543dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="221dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginBottom="482dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="288dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginBottom="414dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="351dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginBottom="351dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="413dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginBottom="289dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="479dp"
+        android:layout_marginEnd="368dp"
+        android:layout_marginBottom="223dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="535dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginBottom="167dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="595dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginBottom="107dp"
+        android:src="@drawable/flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="358dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="654dp"
+        android:src="@drawable/baseline_account_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
