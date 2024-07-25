@@ -8,6 +8,18 @@
     android:background="@drawable/color_proyecto"
     tools:context=".inicio">
 
+    <ImageView
+        android:id="@+id/imageView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/resaltador"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.988" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -24,30 +36,6 @@
         app:layout_constraintVertical_bias="0.114" />
 
     <ImageView
-        android:id="@+id/imageView38"
-        android:layout_width="453dp"
-        android:layout_height="286dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginBottom="293dp"
-        android:src="@drawable/bloom"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView39"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/resaltador"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.392"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.988" />
-
-    <ImageView
         android:id="@+id/imageView42"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,5 +46,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.858" />
+
+    <ImageView
+        android:id="@+id/imageView38"
+        android:layout_width="453dp"
+        android:layout_height="286dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginBottom="293dp"
+        android:src="@drawable/bloom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

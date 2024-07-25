@@ -9,7 +9,7 @@
     tools:context=".Login">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,8 +17,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435"
-        app:srcCompat="@drawable/blanco" />
+        app:layout_constraintVertical_bias="0.471"
+        app:srcCompat="@drawable/cuadro" />
 
     <TextView
         android:id="@+id/txtTituloLogin"

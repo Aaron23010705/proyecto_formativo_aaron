@@ -39,13 +39,14 @@
         android:id="@+id/btnEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="683dp"
         android:backgroundTint="#E15283"
         android:text="Editar datos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/textView8"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -77,13 +78,12 @@
         android:id="@+id/txtCamaPaciente"
         android:layout_width="146dp"
         android:layout_height="46dp"
-        android:layout_marginEnd="32dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/btnEditar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.624" />
@@ -140,17 +140,15 @@
         android:id="@+id/txtEdadPaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="139dp"
-        android:layout_marginTop="253dp"
-        android:layout_marginEnd="134dp"
-        android:layout_marginBottom="433dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368" />
 
     <TextView
         android:id="@+id/txtNombrePaciente"
@@ -172,19 +170,15 @@
         android:id="@+id/txtEnfermedadPaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="139dp"
-        android:layout_marginTop="314dp"
-        android:layout_marginEnd="134dp"
-        android:layout_marginBottom="372dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.444" />
 
     <TextView
         android:id="@+id/txtHoraMedDetalle"
@@ -222,14 +216,12 @@
         android:id="@+id/btnVolverVer"
         android:layout_width="33dp"
         android:layout_height="36dp"
-        android:layout_marginTop="103dp"
-        android:layout_marginBottom="571dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintHorizontal_bias="0.007"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.109"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <ImageView

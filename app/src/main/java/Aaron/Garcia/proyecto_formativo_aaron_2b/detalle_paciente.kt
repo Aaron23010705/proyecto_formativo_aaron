@@ -190,11 +190,14 @@ val intent = Intent(this, MainActivity::class.java)
                     txtFecha_ingreso.text = fecha.text.toString()
                     txtHoraMed.text = hora.text.toString()
 
-                }
-                builder.setNegativeButton("no") { dialog, which ->
-                    dialog.dismiss()
+
+
                 }
 
+            }
+
+            builder.setNegativeButton("no") { dialog, which ->
+                dialog.dismiss()
             }
 
 builder.show()
